@@ -1,0 +1,31 @@
+:root {
+    --barColor: #737373;
+    --visualizerBackground: #121212;
+}
+
+.visualizerContainer {
+    display: flex;
+    height: 100svh;
+    overflow: hidden;
+}
+
+.arrayWrapper {
+    width: 100%;
+    background: var(--visualizerBackground);
+    background: linear-gradient(90deg, rgba(18,18,18,1) 0%, rgba(48,48,48,1) 100%);
+    position: relative;
+    flex: 1 1 auto;
+}
+.bar {
+    position: absolute;
+    box-sizing: border-box;
+    background: var(--barColor);
+    background: linear-gradient(0deg, rgba(40,40,40,1) 0%, rgba(136,136,136,1) 100%);
+    transition: left 0.2s;
+}
+
+@media all and (max-width: 480px) { 
+    .visualizerContainer {
+        flex-direction: column;
+    }
+}

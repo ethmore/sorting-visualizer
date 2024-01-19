@@ -1,0 +1,245 @@
+:root {
+    --sidebarBackgroundDark: #2d2d2d;
+    --buttonDark: #404040;
+    --buttonActiveDark: #494949;
+    --textDark: #ebebeb;
+}
+
+.sidebar-wrap {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.5s;
+    background-color: var(--sidebarBackgroundDark);
+
+}
+
+.sidebar-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 355px;
+    margin-top: 70px;
+    background-color: var(--sidebarBackgroundDark);
+    transition: all 0.5s;
+    overflow: hidden;
+    overflow-y: auto;
+}
+.sidebar-container.closed {
+    width: 0px;
+}
+
+.sidebar-settings-container {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.buttons-stats-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.settings-button-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.settings-button-wrap button {
+    padding: 5px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    background-color: var(--buttonDark);
+    color: var(--textDark);
+    white-space: nowrap;
+}
+
+.settings-button-wrap button:hover {
+    background-color: var(--buttonActiveDark);
+}
+
+.brandLogo {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: max-content;
+    padding: 10px 44px;
+    color: var(--textDark);
+    z-index: 20;
+    transition: font-size 0.5s;
+}
+
+.brandLogo.closed {
+    font-size: 1.6rem;
+}
+
+.hamburger {
+    display: none;
+}
+
+.select-algo {
+    padding: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border: none;
+    background-color: var(--buttonDark);
+    color: var(--textDark);
+    width: 100%;
+}
+
+.hide-settings-button {
+    position: absolute;
+    width: 30px;
+    height: 60px;
+    right: 0;
+    top: 50%;
+    transform: translate(100%, -50%);
+    border-radius: 0 10px 10px 0;
+    background: wheat;
+    cursor: pointer;
+    z-index: 25;
+}
+
+.source-link {
+    width: max-content;
+    display: flex;
+    align-items: center;
+    align-self: center;
+    gap: 5px;
+    margin-bottom: 20px;
+    color: #cccccc;
+    font-size: 1.2rem;
+}
+
+.stats {
+    display: flex;
+    flex-direction: column;
+    color: var(--textDark);
+    z-index: 15;
+    justify-items: stretch;
+    white-space: nowrap;
+}
+
+.stats .col1 {
+    justify-self: end;
+}
+
+/* Small */
+@media all and (max-width: 480px) {
+    .brandLogo {
+        position: relative;
+        top: 0;
+        padding: 0;
+        margin-bottom: 20px;
+        left: 50%;
+        transform: translate(-50%, 10px);
+        font-size: 1.6rem;
+    }
+
+    .hamburger {
+        display: block;
+        position: absolute;
+        left: 20px;
+        top: 20px;
+        width: 25px;
+        z-index: 20;
+        margin: auto 0px;
+        cursor: pointer;
+    }
+
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 18px;
+        gap: 6px;
+    }
+    .hamburger.is-active {
+        gap: 0px;
+    }
+    .hamburger .hamburger-bar {
+        height: 2px;
+        background-color: var(--textDark);
+        transition: 0.4s;
+        border-radius: 2px;
+    }
+    .hamburger.is-active .hamburger-bar:nth-child(1) {
+        transform: translate(0px, 2px) rotate(315deg);
+    }
+    .hamburger.is-active .hamburger-bar:nth-child(3) {
+        transform: translate(0px, -2px) rotate(-315deg);
+    }
+    .hamburger.is-active .hamburger-bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hide-settings-button {
+        display: none;
+    }
+
+    .sidebar-wrap {
+        height: 60%;
+    }
+    .sidebar-wrap.closed {
+        height: 0%;
+    }
+
+    .sidebar-container {
+        width: 100%;
+        margin-top: 0px;
+    }
+
+    .sidebar-container.closed {
+        width: 100%;
+        transition: all 0.2s;
+    }
+
+    .sidebar-settings-container {
+        width: 75%;
+        align-items: center;
+    }
+
+    .select-algo {
+        padding: 3px;
+        font-size: 1rem;
+    }
+
+    .settings-button-wrap {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .buttons-stats-wrap {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .settings-button-wrap button {
+        padding: 2px;
+        width: 45%;
+        font-size: medium;
+    }
+
+    .stats {
+        font-size: 0.8rem;
+    }
+
+    .source-link {
+        position: relative;
+        left: auto;
+        bottom: auto;
+        transform: translateX(0);
+        font-size: 1rem;
+    }
+}

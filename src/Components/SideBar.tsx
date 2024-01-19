@@ -149,7 +149,7 @@ const SideBar: React.FC<Props> = (props) => {
                     </div>
                     <a
                         className="source-link"
-                        href="https://github.com/ethmore"
+                        href="https://github.com/ethmore/sorting-visualizer"
                         target="_blank"
                         rel="noreferrer"
                     >
